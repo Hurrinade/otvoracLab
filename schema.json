@@ -1,0 +1,276 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "localhost:3000/dataFormats/jsonData.json",
+    "type": "array",
+    "title": "Temperatura",
+    "description": "Prikaz podataka iz baze podataka preko json i csv oblika te u tablici",
+    "default": [],
+    "examples": [
+        [
+            {
+                "city": "Zagreb",
+                "country": "Croatia",
+                "creator": "Marko <marko.vura8@gmail.com>",
+                "keywords": "weather, temperature",
+                "date": "2021-10-26",
+                "time": "12:00:00:0000",
+                "dateandtimeformat": "ISO 8601",
+                "language": "english",
+                "timezone": "CEST",
+                "metrics": [
+                    {
+                        "currtemp": 25,
+                        "hightemp": 25,
+                        "mintemp": 5,
+                        "date": "2021-10-26"
+                    }
+                ]
+            },
+            {
+                "city": "Zagreb",
+                "country": "Croatia",
+                "creator": "Marko <marko.vura8@gmail.com>",
+                "keywords": "weather, temperature",
+                "date": "2021-10-25",
+                "time": "12:00:00:0000",
+                "dateandtimeformat": "ISO 8601",
+                "language": "english",
+                "timezone": "CEST",
+                "metrics": [
+                    {
+                        "currtemp": 20,
+                        "hightemp": 24,
+                        "mintemp": 10,
+                        "date": "2021-10-25"
+                    }
+                ]
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "city": "Zagreb",
+                        "country": "Croatia",
+                        "creator": "Marko <marko.vura8@gmail.com>",
+                        "keywords": "weather, temperature",
+                        "date": "2021-10-26",
+                        "time": "12:00:00:0000",
+                        "dateandtimeformat": "ISO 8601",
+                        "language": "english",
+                        "timezone": "CEST",
+                        "metrics": [
+                            {
+                                "currtemp": 25,
+                                "hightemp": 25,
+                                "mintemp": 5,
+                                "date": "2021-10-26"
+                            }
+                        ]
+                    }
+                ],
+                "required": [
+                    "city",
+                    "country",
+                    "creator",
+                    "keywords",
+                    "date",
+                    "time",
+                    "dateandtimeformat",
+                    "language",
+                    "timezone",
+                    "metrics"
+                ],
+                "properties": {
+                    "city": {
+                        "$id": "#/items/anyOf/0/properties/city",
+                        "type": "string",
+                        "title": "The city schema",
+                        "description": "This is city in which we messured temperature",
+                        "default": "",
+                        "examples": [
+                            "Zagreb"
+                        ]
+                    },
+                    "country": {
+                        "$id": "#/items/anyOf/0/properties/country",
+                        "type": "string",
+                        "title": "The country schema",
+                        "description": "Country where this city is situated",
+                        "default": "",
+                        "examples": [
+                            "Croatia"
+                        ]
+                    },
+                    "creator": {
+                        "$id": "#/items/anyOf/0/properties/creator",
+                        "type": "string",
+                        "title": "The creator schema",
+                        "description": "data owner",
+                        "default": "",
+                        "examples": [
+                            "Marko <marko.vura8@gmail.com>"
+                        ]
+                    },
+                    "keywords": {
+                        "$id": "#/items/anyOf/0/properties/keywords",
+                        "type": "string",
+                        "title": "The keywords schema",
+                        "description": "keywords",
+                        "default": "",
+                        "examples": [
+                            "weather, temperature"
+                        ]
+                    },
+                    "date": {
+                        "$id": "#/items/anyOf/0/properties/date",
+                        "type": "string",
+                        "title": "The date schema",
+                        "description": "date of generated data",
+                        "default": "",
+                        "examples": [
+                            "2021-10-26"
+                        ]
+                    },
+                    "time": {
+                        "$id": "#/items/anyOf/0/properties/time",
+                        "type": "string",
+                        "title": "The time schema",
+                        "description": "time of generated data",
+                        "default": "",
+                        "examples": [
+                            "12:00:00:0000"
+                        ]
+                    },
+                    "dateandtimeformat": {
+                        "$id": "#/items/anyOf/0/properties/dateandtimeformat",
+                        "type": "string",
+                        "title": "The dateandtimeformat schema",
+                        "description": "date and time norm",
+                        "default": "",
+                        "examples": [
+                            "ISO 8601"
+                        ]
+                    },
+                    "language": {
+                        "$id": "#/items/anyOf/0/properties/language",
+                        "type": "string",
+                        "title": "The language schema",
+                        "description": "data language",
+                        "default": "",
+                        "examples": [
+                            "english"
+                        ]
+                    },
+                    "timezone": {
+                        "$id": "#/items/anyOf/0/properties/timezone",
+                        "type": "string",
+                        "title": "The timezone schema",
+                        "description": "timezone",
+                        "default": "",
+                        "examples": [
+                            "CEST"
+                        ]
+                    },
+                    "metrics": {
+                        "$id": "#/items/anyOf/0/properties/metrics",
+                        "type": "array",
+                        "title": "The metrics schema",
+                        "description": "temperature array",
+                        "default": [],
+                        "examples": [
+                            [
+                                {
+                                    "currtemp": 25,
+                                    "hightemp": 25,
+                                    "mintemp": 5,
+                                    "date": "2021-10-26"
+                                }
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/items/anyOf/0/properties/metrics/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/items/anyOf/0/properties/metrics/items/anyOf/0",
+                                    "type": "object",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": {},
+                                    "examples": [
+                                        {
+                                            "currtemp": 25,
+                                            "hightemp": 25,
+                                            "mintemp": 5,
+                                            "date": "2021-10-26"
+                                        }
+                                    ],
+                                    "required": [
+                                        "currtemp",
+                                        "hightemp",
+                                        "mintemp",
+                                        "date"
+                                    ],
+                                    "properties": {
+                                        "currtemp": {
+                                            "$id": "#/items/anyOf/0/properties/metrics/items/anyOf/0/properties/currtemp",
+                                            "type": "integer",
+                                            "title": "The currtemp schema",
+                                            "description": "temperature messured at the time of messurement",
+                                            "default": 0,
+                                            "examples": [
+                                                25
+                                            ]
+                                        },
+                                        "hightemp": {
+                                            "$id": "#/items/anyOf/0/properties/metrics/items/anyOf/0/properties/hightemp",
+                                            "type": "integer",
+                                            "title": "The hightemp schema",
+                                            "description": "highest temperature that day",
+                                            "default": 0,
+                                            "examples": [
+                                                25
+                                            ]
+                                        },
+                                        "mintemp": {
+                                            "$id": "#/items/anyOf/0/properties/metrics/items/anyOf/0/properties/mintemp",
+                                            "type": "integer",
+                                            "title": "The mintemp schema",
+                                            "description": "lowest temperature that day",
+                                            "default": 0,
+                                            "examples": [
+                                                5
+                                            ]
+                                        },
+                                        "date": {
+                                            "$id": "#/items/anyOf/0/properties/metrics/items/anyOf/0/properties/date",
+                                            "type": "string",
+                                            "title": "The date schema",
+                                            "description": "date of generated data",
+                                            "default": "",
+                                            "examples": [
+                                                "2021-10-26"
+                                            ]
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": true
+            }
+        ]
+    }
+}

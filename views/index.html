@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Marko Uremović">
+    <meta name="keywords" content="temperature, table, city, Zagreb, date">
+    <meta name="description" content="Prikaz podataka iz baze podataka preko json i csv oblika te u tablici">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Temperatura</title>
+</head>
+
+<body>
+    <nav class="navigation">
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/datatable">Data</a>
+    </nav>
+
+    <main>
+        <div class="glass">
+            <p class="data">Autor podataka: Marko Uremović</p>
+            <p class="data">Otovrena licenca: Creative commons (CC BY)
+            <p class="data">Verzija: version 1.0</p>
+            <p class="data">Jezik podataka: engleski</p>
+            <p class="data">Atributi u skupu podataka:
+            <ul>
+                <li class="list-element">city</li>
+                <li class="list-element">country</li>
+                <li class="list-element">creator</li>
+                <li class="list-element">keywords</li>
+                <li class="list-element">date</li>
+                <li class="list-element">time</li>
+                <li class="list-element">dateandtimeformat</li>
+                <li class="list-element">language</li>
+                <li class="list-element">timezone</li>
+                <li class="list-element">metrics (temperature)</li>
+            </ul>
+            </p>
+        </div>
+        <div class="glass">
+            <div class="download">
+                <h1>Download</h1>
+                <hr>
+            </div>
+            <a class="data-format" href="/dataFormats/jsonData.json" download="json">JSON</a>
+            <a class="data-format" href="/dataFormats/csvData.csv" downlaod="csv">CSV</a>
+        </div>
+    </main>
+
+</body>
+
+</html>

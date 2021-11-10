@@ -1,0 +1,24 @@
+{
+  "name": "otvoraclab",
+  "version": "1.0.0",
+  "description": "<h1>1. Labos</h1>\r <h2>Licenca</h2>\r <p>\r     Otvorena licenca <strong>Creative commons</strong> podvrste <strong>CC BY</strong>.\r     Ta licenca dozovljava distribuiranje, koristenje u radovima i projektima cak i komercijalno sve dok korisnik nama da zasluge za te podatke.\r </p>\r <h2>Autor</h2>\r <p>\r     Marko Uremović\r </p>\r <h2>Verzija skupa podataka</h2>\r <p>\r     Version 1.0\r </p>\r <h2>Jezik</h2>\r <p>\r     engleski\r </p>\r <h2>Opis atributa u skupu podataka</h2>\r <p>\r     city = grad u kojem je mjerena temperatura<br>\r     country = drzava u kojoj je grad<br> \r     creator = vlasnik podataka<br> \r     keywords = kljucne rijeci<br> \r     date = datum citanja podataka<br>\r     time = vrijeme citanja podataka<br> \r     dateandtimeformat = zapis datuma i vremena po normi<br> \r     language = jezik podataka<br> \r     timezone = vremenska zona<br>\r     currtemp = trenutna temperatura<br>\r     hightemp = najveca temperatura taj dan<br>\r     mintemp = najmanja temperatura taj dan\r </p>\r <h2>Ostali korisni podaci</h2>\r <p>\r     Podatak o date i time formatu nam je koristan nacin da svima koji koriste nase podatke kazemo kako da ih citaju iz baze podataka (preko datuma). \r </p>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hurrinade/otvoracLab.git"
+  },
+  "author": "Marko Uremović",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hurrinade/otvoracLab/issues"
+  },
+  "homepage": "https://github.com/Hurrinade/otvoracLab#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14",
+    "pg": "^8.7.1"
+  }
+}
