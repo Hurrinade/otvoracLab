@@ -101,7 +101,7 @@
                     "200": {
                         "description": "Fetch successfull",
                         "schema": {
-                            "$ref": "#/items/date"
+                            "$ref": "#/items/anyOf/0/properties/date"
                         }
                     },
                     "500": {
@@ -145,7 +145,7 @@
                         "description": "date of the resource",
                         "required": true,
                         "schema": {
-                            "$ref": "#/items/date"
+                            "$ref": "#/items/anyOf/0/properties/date"
                         }
                     },
                     {
@@ -154,7 +154,7 @@
                         "description": "current temperature of the resource",
                         "required": true,
                         "schema": {
-                            "$ref": "#/items/properties/currtemp"
+                            "$ref": "#/items/anyOf/0/properties/currtemp"
                         }
                     },
                     {
@@ -163,7 +163,7 @@
                         "description": "highest temperature of the resource",
                         "required": true,
                         "schema": {
-                            "$ref": "#/items/properties/hightemp"
+                            "$ref": "#/items/anyOf/0/properties/hightemp"
                         }
                     },
                     {
@@ -172,16 +172,13 @@
                         "description": "lowest temperature of the resource",
                         "required": true,
                         "schema": {
-                            "$ref": "#/items/properties/mintemp"
+                            "$ref": "#/items/anyOf/0/properties/mintemp"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Successful operation",
-                        "schema": {
-                            "$ref": "#/items"
-                        }
+                        "description": "Successful operation"
                     },
                     "406": {
                         "description": "There can be only one messure per date (date already exists)"
