@@ -44,7 +44,7 @@ router.get('/all/:id(\\d+)', async function (req, res) {
         console.log(elementCount);
 
         if (id > elementCount || id < 1) {
-            res.status(400).json(response.error("Bad Request", res.statusCode))
+            res.status(400).json(response.error("Bad Request ID not possible", res.statusCode))
         } else {
             const rawData = (await db.query(`select * from mytable join metrics on mytable.date = metrics.date where id = $1`, [id])).rows;
 
@@ -202,7 +202,7 @@ router.put('/update/:id(\\d+)', async function (req, res) {
             console.log(elementCount);
 
             if (id > elementCount || id < 1) {
-                res.status(400).json(response.error("Bad Request", res.statusCode));
+                res.status(400).json(response.error("Bad Request ID not possible", res.statusCode));
             } else {
 
                 (await db.query(`update metrics set mintemp = $1 where id = $2;`, [req.body.mintemp, id]));
@@ -233,7 +233,7 @@ router.delete('/delete/:id(\\d+)', async function (req, res) {
         console.log(elementCount);
 
         if (id > elementCount || id < 1) {
-            res.status(400).json(response.error("Bad Request", res.statusCode));
+            res.status(400).json(response.error("Bad Request ID not possible", res.statusCode));
         } else {
 
             var deleteDate = (await db.query(`select date from metrics where id = $1;`, [id])).rows;
