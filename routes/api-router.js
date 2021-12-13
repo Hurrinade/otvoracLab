@@ -136,7 +136,7 @@ router.post('/add', async function (req, res) {
     res.set('Content-Type', "application/json");
     var regEx = /^\d{4}-\d{2}-\d{2}$/;
 
-    if (isNaN(req.body.mintemp) || isNaN(req.body.hightemp) || isNaN(req.body.currtemp) || !(req.body.date).match(regEx)) {
+    if (isNaN(parseInt(req.body.mintemp)) || isNaN(parseInt(req.body.currtemp)) || isNaN(parseInt(req.body.hightemp)) || !(req.body.date).match(regEx)) {
         res.status(400).json(response.error("Bad Request, temperatures need to be numeric and date yyyy-mm-dd", res.statusCode));
     } else {
         try {
@@ -153,7 +153,6 @@ router.post('/add', async function (req, res) {
             }
 
             if (!alreadyIn) {
-
 
                 (await db.query(`insert into mytable values ($1,$2,$3,$4,$5,$6,$7,$8,$9)`, ["Zagreb", "Croatia", "Marko <marko.vura8@gmail.com>", "weather, temperature", req.body.date, "12:00:00:0000", "ISO 8601", "english", "CEST"]));
                 (await db.query(`insert into metrics values ($1,$2,$3,$4,$5)`, [req.body.currtemp, req.body.hightemp, req.body.mintemp, req.body.date, maxId[0].max + 1]));
