@@ -12,7 +12,7 @@
             "url": "https://creativecommons.org/"
         }
     },
-    "basePath": "/v2",
+    "basePath": "/v1",
     "paths": {
         "/all": {
             "get": {
