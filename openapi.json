@@ -1,0 +1,274 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "info": "temperature",
+        "version": "1",
+        "title": "Temper ature",
+        "contact": {
+            "email": "marko.vura8@gmail.com"
+        },
+        "license": {
+            "name": "Creative Commons",
+            "url": "https://creativecommons.org/"
+        }
+    },
+    "basePath": "/v2",
+    "paths": {
+        "/all": {
+            "get": {
+                "summary": "Get all data",
+                "description": "Returns all data with temperatures",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/all/{id}": {
+            "get": {
+                "summary": "Get resource from database by ID",
+                "description": "Returns a single database resource",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the resource",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID"
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/all/random": {
+            "get": {
+                "summary": "Get resource from database",
+                "description": "Returns one random resource from database",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/all/dates": {
+            "get": {
+                "summary": "Get dates",
+                "description": "Returns all dates",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items/date"
+                        }
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/all/avg": {
+            "get": {
+                "summary": "Get average",
+                "description": "Returns all average temeperatures",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/add": {
+            "post": {
+                "summary": "Get resource from collection by ID",
+                "description": "Returns a single collection resource",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "date",
+                        "in": "body",
+                        "description": "date of the resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/items/date"
+                        }
+                    },
+                    {
+                        "name": "currtemp",
+                        "in": "body",
+                        "description": "current temperature of the resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/items/properties/currtemp"
+                        }
+                    },
+                    {
+                        "name": "hightemp",
+                        "in": "body",
+                        "description": "highest temperature of the resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/items/properties/hightemp"
+                        }
+                    },
+                    {
+                        "name": "mintemp",
+                        "in": "body",
+                        "description": "lowest temperature of the resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/items/properties/mintemp"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "406": {
+                        "description": "There can be only one messure per date (date already exists)"
+                    },
+                    "400": {
+                        "description": "Wrong input values (temperatures are number and date is yyyy-mm-dd)"
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/update/{id}": {
+            "put": {
+                "summary": "Update resource by ID",
+                "description": "Updates resource under that ID",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the resource",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    {
+                        "name": "mintemp",
+                        "in": "body",
+                        "description": "lowest temperature of the resource",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/items/properties/mintemp"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID or there is a wrong temperature value (needs to be numeric)"
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        },
+        "/delete/{id}": {
+            "delete": {
+                "summary": "Delete resource by ID",
+                "description": "Deletes resource under that ID",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the resource",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetch successfull",
+                        "schema": {
+                            "$ref": "#/items"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid ID"
+                    },
+                    "500": {
+                        "description": "Database fail"
+                    }
+                }
+            }
+        }
+    }
+}
