@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body.table-body{
+    background-color: rgb(255, 229, 197);
+}
+
 
 .table{
     display: flex;

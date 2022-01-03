@@ -14,7 +14,8 @@
                 "currtemp": 25,
                 "hightemp": 25,
                 "mintemp": 5,
-                "date": "2021-10-26"
+                "date": "2021-10-26",
+                "id": 1
             }
         ]
     },
@@ -33,7 +34,8 @@
                 "currtemp": 20,
                 "hightemp": 24,
                 "mintemp": 10,
-                "date": "2021-10-25"
+                "date": "2021-10-25",
+                "id": 2
             }
         ]
     },
@@ -51,8 +53,9 @@
             {
                 "currtemp": 21,
                 "hightemp": 24,
-                "mintemp": 2,
-                "date": "2021-10-24"
+                "mintemp": 1,
+                "date": "2021-10-24",
+                "id": 3
             }
         ]
     },
@@ -71,7 +74,8 @@
                 "currtemp": 24,
                 "hightemp": 24,
                 "mintemp": 3,
-                "date": "2021-10-23"
+                "date": "2021-10-23",
+                "id": 4
             }
         ]
     },
@@ -90,7 +94,8 @@
                 "currtemp": 26,
                 "hightemp": 27,
                 "mintemp": -1,
-                "date": "2021-10-22"
+                "date": "2021-10-22",
+                "id": 5
             }
         ]
     },
@@ -108,8 +113,9 @@
             {
                 "currtemp": 25,
                 "hightemp": 28,
-                "mintemp": 6,
-                "date": "2021-10-21"
+                "mintemp": 1,
+                "date": "2021-10-21",
+                "id": 6
             }
         ]
     },
@@ -128,7 +134,8 @@
                 "currtemp": 19,
                 "hightemp": 24,
                 "mintemp": -3,
-                "date": "2021-10-20"
+                "date": "2021-10-20",
+                "id": 7
             }
         ]
     },
@@ -147,7 +154,8 @@
                 "currtemp": 20,
                 "hightemp": 24,
                 "mintemp": -5,
-                "date": "2021-10-19"
+                "date": "2021-10-19",
+                "id": 8
             }
         ]
     },
@@ -166,7 +174,8 @@
                 "currtemp": 12,
                 "hightemp": 24,
                 "mintemp": 0,
-                "date": "2021-10-18"
+                "date": "2021-10-18",
+                "id": 9
             }
         ]
     },
@@ -185,7 +194,8 @@
                 "currtemp": 24,
                 "hightemp": 24,
                 "mintemp": 7,
-                "date": "2021-10-17"
+                "date": "2021-10-17",
+                "id": 10
             }
         ]
     },
@@ -204,7 +214,28 @@
                 "currtemp": 20,
                 "hightemp": 24,
                 "mintemp": 8,
-                "date": "2021-10-16"
+                "date": "2021-10-16",
+                "id": 11
+            }
+        ]
+    },
+    {
+        "city": "Zagreb",
+        "country": "Croatia",
+        "creator": "Marko <marko.vura8@gmail.com>",
+        "keywords": "weather, temperature",
+        "date": "2021-10-28",
+        "time": "12:00:00:0000",
+        "dateandtimeformat": "ISO 8601",
+        "language": "english",
+        "timezone": "CEST",
+        "metrics": [
+            {
+                "currtemp": 1,
+                "hightemp": 12,
+                "mintemp": 2,
+                "date": "2021-10-28",
+                "id": 12
             }
         ]
     }

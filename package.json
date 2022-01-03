@@ -18,7 +18,8 @@
   "homepage": "https://github.com/Hurrinade/otvoracLab#readme",
   "dependencies": {
     "body-parser": "^1.19.1",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
+    "express-openid-connect": "^2.5.2",
     "node-fetch": "^2.6.6",
     "nodemon": "^2.0.14",
     "pg": "^8.7.1"

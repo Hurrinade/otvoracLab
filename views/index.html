@@ -9,13 +9,30 @@
     <meta name="description" content="Prikaz podataka iz baze podataka preko json i csv oblika te u tablici">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/userInfo.css">
+    <script src="/scripts/jquery.js"></script>
     <title>Temperatura</title>
 </head>
 
 <body>
     <nav class="navigation">
-        <a class="nav-item" href="/">Home</a>
-        <a class="nav-item" href="/datatable">Data</a>
+        <nav class="first">
+            <a class="nav-item" href="/">Home</a>
+            <a class="nav-item" href="/datatable">Data</a>
+        </nav>
+        <nav class="second">
+            <a class="button" onclick="getData()">
+                Korisnicki profil
+            </a>
+            <a class="button" onclick="updateFiles()">
+                Osvjezi preslike
+            </a>
+            <a class="button" href="/logout">
+                Odjava
+            </a>
+        </nav>
+
     </nav>
 
     <main>
@@ -47,8 +64,78 @@
             <a class="data-format" href="/dataFormats/jsonData.json" download="json">JSON</a>
             <a class="data-format" href="/dataFormats/csvData.csv" downlaod="csv">CSV</a>
         </div>
+
+        <div class="userInfo">
+            <div class="username" id="username">Username: </div>
+            <div class="userData" id="userData">
+            </div>
+        </div>
     </main>
 
+
+
 </body>
+<script>
+    var getData = async function () {
+        if ($('.userInfo').css('display') == 'none') {
+            $('.userInfo').show();
+            $('.glass').hide();
+            const response = await fetch('http://localhost:3000/profile', {
+                method: 'GET'
+            });
+
+            //console.log(response)
+            const data = await response.json();
+            const realData = data.data;
+
+            var userData = document.getElementById('userData');
+            var username = document.getElementById('username');
+
+            //console.log(realData)
+
+            for (var d in realData) {
+                if (d === "picture") {
+                    var information = document.createElement("img");  // Create with DOM
+                    information.src = realData[d];
+                    information.classList.add("information");
+                    userData.append(information)
+                } else if (d === "nickname") {
+                    var nickname = document.createElement("span");  // Create with DOM
+                    nickname.innerHTML = realData[d];
+                    username.append(nickname)
+                } else {
+                    var information = document.createElement("p");  // Create with DOM
+                    information.innerHTML = realData[d];
+                    information.classList.add("information");
+                    userData.append(information)
+                }
+
+
+
+            }
+        } else {
+            $('.userInfo').hide();
+            $('.glass').show();
+            $('.username').text('Username: ')
+            $('.userData').empty();
+        }
+
+
+    }
+
+    var updateFiles = async function () {
+        const response = await fetch('http://localhost:3000/home/updateData', {
+            method: 'PUT'
+        });
+
+        const success = await response.json();
+        console.log(success)
+        if (success.success) {
+            alert('Files updated');
+        } else {
+            alert('There was an error');
+        }
+    }
+</script>
 
 </html>
